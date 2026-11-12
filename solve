@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Run a quest: ./solve 1
+#             ./solve 1 example
+#             ./solve 1 2
+set -euo pipefail
+cd "$(dirname "$0")"
+
+./gradlew classes --quiet --console=plain
+exec java -cp build/classes/java/main codes.everybody.Runner "$@"
