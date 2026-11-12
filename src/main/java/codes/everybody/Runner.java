@@ -61,7 +61,7 @@ public final class Runner {
             } catch (MissingInputException e) {
                 boolean neededNow = onlyPart != null || part == 1;
                 if (neededNow) {
-                    System.out.println(e.getMessage());
+                    System.out.println(e.getMessage().stripTrailing());
                     failed++;
                 } else {
                     System.out.printf(
